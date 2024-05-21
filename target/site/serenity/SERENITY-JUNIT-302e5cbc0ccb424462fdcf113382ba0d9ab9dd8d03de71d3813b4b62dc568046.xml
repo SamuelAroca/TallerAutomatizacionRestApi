@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="automatizacion de rest api - pom" skipped="0" tests="1" time="0.95" timestamp="2024-05-21 05:29:44"><testcase name="actualizar un usuario con método put"><error type="java.lang.ExceptionInInitializerError"/><system-err>null&#13;
+net.serenitybdd.rest.utils.RestDecorationHelper.decorate(RestDecorationHelper.java:20)&#13;
+net.serenitybdd.rest.SerenityRest.fetchRequestSpecification(SerenityRest.java:233)&#13;
+net.serenitybdd.rest.SerenityRest.given(SerenityRest.java:220)&#13;
+com.unac.restinteractions.RestInteractions.executionPutToken(RestInteractions.java:16)&#13;
+com.unac.apis.GoRestApi.executionPutToken(GoRestApi.java:15)&#13;
+com.unac.stepsdefinitions.PutGoRestStepsdefinitions.seUsaElEndpointSeActualizaElUsuarioConElIDDondeSeCambiaraSuStatusA(PutGoRestStepsdefinitions.java:18)&#13;
+✽.se usa el endpoint "public/v2/users/" se actualiza el usuario con el ID "6913852" donde se cambiará su status a "inactive"(file:///M:/Proyectos/Clones/TallerAutomatizacionRestApi/src/test/resources/com/unac/put_go_rest.feature:8)&#13;
+</system-err></testcase></testsuite>
