@@ -4,19 +4,19 @@ import com.unac.restinteractions.RestInteractions;
 
 public class GoRestApi {
 
-    private static final String TOKEN = "e871d08829b6c03f39b4eea4d1e51522ab2cf5b59685c8d082f196db681b6254";
-    private static String pathName = "status";
+    private static final String TOKEN = "270ee8ce7b5c015304c7c9c67ad1e80e47ec7afbf6fea997ca707545d3e371eb";
+    private static String pathStatus = "status";
 
     public static void setBaseUrl(String baseUrl) {
         RestInteractions.setBaseUrl(baseUrl);
     }
 
-    public static void executionPutToken(String endPoint, String idUser, String requestBody) {
-        RestInteractions.executionPutToken(endPoint,idUser,TOKEN, requestBody);
+    public static void executionPutToken(String endPoint, String idUser, String status){
+        RestInteractions.executionPutToken(endPoint, idUser, TOKEN, status);
     }
 
-    public static void validateResponse(Integer statusCode, String status) {
+    public static void validatePutResponse(Integer statusCode, String status) {
         RestInteractions.validatecode(statusCode);
-        RestInteractions.validateDataResponse(status,pathName);
+        RestInteractions.validateStatusResponse(status, pathStatus);
     }
 }
