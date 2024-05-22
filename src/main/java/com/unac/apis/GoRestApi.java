@@ -10,13 +10,14 @@ public class GoRestApi {
         RestInteractions.setBaseUrl(baseUrl);
     }
 
-    public static void executionPutToken(String endPoint, String idUser, String status){
-        RestInteractions.executionPutToken(endPoint, idUser, TOKEN, status);
+    public static void executionPutToken(String endPoint, String idUser, String name, String email){
+        RestInteractions.executionPutToken(endPoint, idUser, TOKEN, name, email);
     }
 
-    public static void validatePutResponse(Integer statusCode, String status) {
-        RestInteractions.validateCode(statusCode);
-        String pathStatus = "status";
-        RestInteractions.validateStatusResponse(status, pathStatus);
+    public static void validatePutResponse(Integer statusCode, String name, String email) {
+        RestInteractions.validatecode(statusCode);
+        String pathName = "name";
+        String pathEmail = "email";
+        RestInteractions.validateDataResponse(name, email, pathName, pathEmail);
     }
 }

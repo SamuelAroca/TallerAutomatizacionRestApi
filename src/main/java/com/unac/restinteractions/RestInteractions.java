@@ -15,9 +15,10 @@ public class RestInteractions {
         RestInteractions.baseUrl = baseUrl;
     }
 
-    public static void executionPutToken(String endPoint, String idUser, String token, String status) {
+    public static void executionPutToken(String endPoint, String idUser, String token, String name, String email) {
         Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("status", status);
+        requestBody.put("name", name);
+        requestBody.put("email", email);
 
         SerenityRest.given().auth().oauth2(token)
                 .contentType(ContentType.JSON)
@@ -28,14 +29,17 @@ public class RestInteractions {
         SerenityRest.lastResponse().prettyPeek();
     }
 
-    public static void validateCode(Integer statusCode) {
-        int statusActual = SerenityRest.lastResponse().statusCode();
-        assertEquals(statusActual, statusCode.intValue());
+    public static void validatecode(Integer statusCode) {
+        Integer statusActual = SerenityRest.lastResponse().statusCode();
+        assertEquals(statusActual.intValue(), statusCode.intValue());
     }
 
-    public static void validateStatusResponse(String status, String pathStatus) {
-        String statusActual = SerenityRest.lastResponse()
-                .jsonPath().getString(pathStatus);
-        assertEquals(statusActual, status);
+    public static void validateDataResponse(String name, String email, String pathName, String pathEmail) {
+        String nombreActual = SerenityRest.lastResponse()
+                .jsonPath().getString(pathName);
+        String emailActual = SerenityRest.lastResponse()
+                .jsonPath().getString(pathEmail);
+        assertEquals(nombreActual, name);
+        assertEquals(emailActual, email);
     }
 }
