@@ -28,9 +28,9 @@ public class RestInteractions {
         SerenityRest.lastResponse().prettyPeek();
     }
 
-    public static void validatecode(Integer statusCode) {
-        Integer statusActual = SerenityRest.lastResponse().statusCode();
-        assertEquals(statusActual.intValue(), statusCode.intValue());
+    public static void validateCode(Integer statusCode) {
+        int statusActual = SerenityRest.lastResponse().statusCode();
+        assertEquals(statusActual, statusCode.intValue());
     }
 
     public static void validateStatusResponse(String status, String pathStatus) {

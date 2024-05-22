@@ -5,7 +5,6 @@ import com.unac.restinteractions.RestInteractions;
 public class GoRestApi {
 
     private static final String TOKEN = "270ee8ce7b5c015304c7c9c67ad1e80e47ec7afbf6fea997ca707545d3e371eb";
-    private static String pathStatus = "status";
 
     public static void setBaseUrl(String baseUrl) {
         RestInteractions.setBaseUrl(baseUrl);
@@ -16,7 +15,8 @@ public class GoRestApi {
     }
 
     public static void validatePutResponse(Integer statusCode, String status) {
-        RestInteractions.validatecode(statusCode);
+        RestInteractions.validateCode(statusCode);
+        String pathStatus = "status";
         RestInteractions.validateStatusResponse(status, pathStatus);
     }
 }
